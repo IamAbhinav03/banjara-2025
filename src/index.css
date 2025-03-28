@@ -1,1 +1,11 @@
+/* @import url("../public/fonts/Playlist\ Script.otf"); */
 @import "tailwindcss";
+
+@font-face {
+  font-family: "Playlist Script";
+  src: url("/fonts/Playlist\ Script.otf") format("opentype");
+}
+
+@theme {
+  --font-playlist: "Playlist Script", cursive;
+}
