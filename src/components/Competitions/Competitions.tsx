@@ -114,7 +114,7 @@ const Competitions = () => {
       <main className="pt-20 pb-16">
         {/* Hero Section */}
         <section className="relative py-24 bg-gradient-to-br from-pink-900 via-purple-900 to-blue-900 overflow-hidden">
-          <div className="absolute inset-0 bg-[url('/smoke.png')] opacity-10 animate-pulse"></div>
+          <div className="absolute inset-0 opacity-10 animate-pulse"></div>
           <div className="container mx-auto px-6 relative">
             <motion.div
               initial={{ opacity: 0, y: -20 }}
@@ -135,7 +135,7 @@ const Competitions = () => {
 
         {/* Competitions Section with Tabs */}
         <section className="py-16 bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50 relative overflow-hidden">
-          <div className="absolute inset-0 bg-[url('/pattern.png')] opacity-5"></div>
+          <div className="absolute inset-0 opacity-5"></div>
           <div className="container mx-auto px-6 relative">
             <Tabs
               defaultValue={competitionsData[0].category}
@@ -204,7 +204,7 @@ const Competitions = () => {
 
         {/* Registration CTA */}
         <section className="py-16 bg-gradient-to-br from-pink-900 via-purple-900 to-blue-900 relative overflow-hidden">
-          <div className="absolute inset-0 bg-[url('/smoke.png')] opacity-10 animate-pulse"></div>
+          <div className="absolute inset-0 opacity-10 animate-pulse"></div>
           <div className="container mx-auto px-6 relative text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -227,7 +227,7 @@ const Competitions = () => {
 
         {/* Rules Section */}
         <section className="py-16 bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50 relative overflow-hidden">
-          <div className="absolute inset-0 bg-[url('/pattern.png')] opacity-5"></div>
+          <div className="absolute inset-0 opacity-5"></div>
           <div className="container mx-auto px-6 relative">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

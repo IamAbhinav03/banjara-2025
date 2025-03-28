@@ -29,7 +29,6 @@ export default function Home() {
           <source src={backgroundVideo} type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
-        {/* <div className="absolute inset-0 bg-[url('/smoke.png')] opacity-20 animate-pulse"></div> */}
         <main className="relative h-full flex items-center justify-center pt-20 pb-16">
           <div className="container mx-auto px-6 text-center">
             <motion.div
@@ -167,7 +166,7 @@ export default function Home() {
             <p className="font-playscript text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
               Get ready for three days of pure magic! Experience mesmerizing
               performances, artistic brilliance, and an unforgettable cultural
-              celebration at IIITD's biggest festival.
+              celebration at Ashoka University's biggest festival.
             </p>
 
             {/* Countdown Timer */}
@@ -266,7 +265,7 @@ export default function Home() {
 
       {/* Mystery Guest Section */}
       <section className="py-32 bg-gradient-to-br from-pink-900 via-purple-900 to-blue-900 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/smoke.png')] opacity-10 animate-pulse"></div>
+        <div className="absolute inset-0s opacity-10 animate-pulse"></div>
         <div className="container mx-auto px-6 relative">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -307,7 +306,7 @@ export default function Home() {
 
       {/* Throwback Gallery Section */}
       <section className="py-24 bg-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/pattern.png')] opacity-5"></div>
+        <div className="absolute inset-0 opacity-5"></div>
         <div className="container mx-auto px-6 relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
