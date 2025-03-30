@@ -103,7 +103,7 @@ const Team = () => {
               <h1 className="font-playlist text-6xl md:text-8xl text-white mb-6 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500">
                 Meet the Team
               </h1>
-              <p className="font-playscript text-2xl text-white/90 max-w-2xl mx-auto">
+              <p className="font-sans text-2xl text-white/90 max-w-2xl mx-auto">
                 The passionate individuals behind Banjaara 2025
               </p>
             </motion.div>
@@ -127,7 +127,7 @@ const Team = () => {
                 <Button
                   key={category.id || "all"}
                   onClick={() => setActiveFilter(category.id)}
-                  className={`px-6 py-5 rounded-full transition-all ${
+                  className={`font-sans px-6 py-5 rounded-full transition-all ${
                     activeFilter === category.id
                       ? "bg-gradient-to-r from-pink-500 to-purple-500 text-white"
                       : "bg-white text-gray-700 hover:bg-gray-100"
@@ -181,7 +181,7 @@ const Team = () => {
                             <h3 className="font-playlist text-2xl text-white">
                               {member.name}
                             </h3>
-                            <p className="font-playscript text-white/90">
+                            <p className="font-sans text-white/90">
                               {member.role}
                             </p>
                           </div>
