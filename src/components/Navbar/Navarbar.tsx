@@ -25,8 +25,10 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? "invisible" : "visible"
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+        isScrolled
+          ? "transform -translate-y-full opacity-0"
+          : "transform translate-y-0 opacity-100"
       }`}
     >
       <div
