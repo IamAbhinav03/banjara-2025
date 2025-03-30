@@ -1,12 +1,14 @@
 import {
   FaInstagram,
-  FaFacebook,
   FaTwitter,
   FaEnvelope,
   FaPhone,
   FaMapMarkerAlt,
+  FaLinkedin,
+  FaYoutube,
 } from "react-icons/fa";
-import logo from "../../assets/logo2.svg";
+import logo from "../../assets/logo-white.svg";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -19,8 +21,8 @@ export default function Footer() {
               <img
                 src={logo}
                 alt="Banjaara Logo"
-                className="w-12 h-12"
-                style={{ transform: "scale(2)", transformOrigin: "left" }}
+                className="w-5 h-5 pl-2"
+                style={{ transform: "scale(15)", transformOrigin: "center" }}
               />
             </div>
             <p className="text-lg font-playscript mt-6 text-gray-400">
@@ -28,25 +30,36 @@ export default function Footer() {
             </p>
             <div className="flex space-x-4 mt-6">
               <a
-                href="#"
+                href="https://www.instagram.com/banjaara.ashoka?igsh=MWF0NGltZTJqNDRvOQ=="
                 className="hover:text-pink-500 transition-colors"
                 aria-label="Instagram"
+                target="_blank"
               >
                 <FaInstagram size={24} />
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/company/banjaara-ashoka/about/"
                 className="hover:text-pink-500 transition-colors"
-                aria-label="Facebook"
+                aria-label="LinkedIn"
+                target="_blank"
               >
-                <FaFacebook size={24} />
+                <FaLinkedin size={24} />
               </a>
               <a
-                href="#"
+                href="https://x.com/BanjaaraAshoka"
                 className="hover:text-pink-500 transition-colors"
                 aria-label="Twitter"
+                target="_blank"
               >
                 <FaTwitter size={24} />
+              </a>
+              <a
+                href="https://www.youtube.com/@banjaara-ashokauniversity6289/featured"
+                className="hover:text-pink-500 transition-colors"
+                aria-label="Youtube"
+                target="_blank"
+              >
+                <FaYoutube size={24} />
               </a>
             </div>
           </div>
@@ -58,36 +71,33 @@ export default function Footer() {
             </h3>
             <ul className="space-y-3">
               <li>
-                <a
-                  href="#home"
-                  className="hover:text-pink-500 transition-colors"
-                >
+                <Link to="/" className="hover:text-pink-500 transition-colors">
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#competitions"
+                <Link
+                  to="/competitions"
                   className="hover:text-pink-500 transition-colors"
                 >
                   Competitions
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#schedule"
+                <Link
+                  to="/schedule"
                   className="hover:text-pink-500 transition-colors"
                 >
                   Schedule
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#tickets"
+                <Link
+                  to="/team"
                   className="hover:text-pink-500 transition-colors"
                 >
-                  Tickets
-                </a>
+                  Team
+                </Link>
               </li>
             </ul>
           </div>
@@ -102,16 +112,16 @@ export default function Footer() {
                   className="hover:text-pink-500 transition-colors flex items-center gap-2"
                 >
                   <FaEnvelope size={16} />
-                  info@banjaara.com
+                  fest@ashoka.edu.in
                 </a>
               </li>
               <li>
                 <a
-                  href="tel:+911234567890"
+                  href="tel:+918076323162"
                   className="hover:text-pink-500 transition-colors flex items-center gap-2"
                 >
                   <FaPhone size={16} />
-                  +91 1234567890
+                  +91 80763 23162
                 </a>
               </li>
               <li className="text-gray-400 flex items-start gap-2">
@@ -132,7 +142,7 @@ export default function Footer() {
             <h3 className="text-xl font-semibold text-white mb-6">Location</h3>
             <div className="w-full h-48 rounded-lg overflow-hidden">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3494.7277885761025!2d77.10931931508876!3d28.866354982321522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d8b53c1e0cbc3%3A0x47b82e2073e48d1d!2sAshoka%20University!5e0!3m2!1sen!2sin!4v1645509177274!5m2!1sen!2sin"
+                src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;coord=28.94712001384767, 77.10147015438375&amp;q=Ashoka%20University&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -146,7 +156,7 @@ export default function Footer() {
 
         <div className="mt-12 pt-8 border-t border-gray-700 text-center">
           <p className="text-gray-400">
-            &copy; 2024 Banjaara. All rights reserved.
+            &copy; 2025 Banjaara. All rights reserved.
           </p>
           <br />
           <p>Designed by Abhinav M Hari</p>
