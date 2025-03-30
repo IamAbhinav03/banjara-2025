@@ -4,12 +4,10 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Navbar from "@/components/Navbar/Navarbar";
 import Footer from "@/components/Footer/Footer";
 import { Button } from "@/components/ui/button";
-import { Download, Bell, MapPin } from "lucide-react";
-
 // Schedule data organized by day
 const scheduleData = {
   day1: {
-    date: "March 15, 2025",
+    date: "April 05, 2025",
     events: [
       {
         time: "09:00 AM - 10:00 AM",
@@ -51,18 +49,18 @@ const scheduleData = {
         time: "05:30 PM - 07:30 PM",
         name: "Cultural Performance",
         venue: "Main Stage",
-        category: "performance",
+        category: "social",
       },
       {
         time: "08:00 PM - 10:00 PM",
         name: "DJ Night",
         venue: "Open Air Theatre",
-        category: "performance",
+        category: "social",
       },
     ],
   },
   day2: {
-    date: "March 16, 2025",
+    date: "April 06, 2025",
     events: [
       {
         time: "09:30 AM - 11:30 AM",
@@ -92,7 +90,7 @@ const scheduleData = {
         time: "02:00 PM - 04:00 PM",
         name: "Cooking Competition",
         venue: "Culinary Lab",
-        category: "culinary",
+        category: "stratergy",
       },
       {
         time: "03:00 PM - 05:00 PM",
@@ -114,59 +112,6 @@ const scheduleData = {
       },
     ],
   },
-  day3: {
-    date: "March 17, 2025",
-    events: [
-      {
-        time: "09:30 AM - 11:30 AM",
-        name: "Storytelling Competition",
-        venue: "Library Amphitheatre",
-        category: "literary",
-      },
-      {
-        time: "10:00 AM - 12:00 PM",
-        name: "Music Competition (Finals)",
-        venue: "Music Hall",
-        category: "performing",
-      },
-      {
-        time: "11:00 AM - 01:00 PM",
-        name: "Baking Competition",
-        venue: "Culinary Lab",
-        category: "culinary",
-      },
-      {
-        time: "12:30 PM - 02:00 PM",
-        name: "Lunch Break",
-        venue: "Food Court",
-        category: "break",
-      },
-      {
-        time: "02:00 PM - 04:00 PM",
-        name: "Drama Competition (Finals)",
-        venue: "Open Air Theatre",
-        category: "performing",
-      },
-      {
-        time: "04:30 PM - 06:00 PM",
-        name: "Award Ceremony",
-        venue: "Main Stage",
-        category: "ceremony",
-      },
-      {
-        time: "06:30 PM - 08:30 PM",
-        name: "Closing Performance",
-        venue: "Main Stage",
-        category: "performance",
-      },
-      {
-        time: "08:30 PM - 09:30 PM",
-        name: "Closing Ceremony",
-        venue: "Main Stage",
-        category: "ceremony",
-      },
-    ],
-  },
 };
 
 // Category colors matching your theme
@@ -178,9 +123,9 @@ const categoryColors: Record<string, string> = {
   visual: "bg-gradient-to-r from-blue-500/20 to-pink-500/20 border-l-blue-500",
   literary:
     "bg-gradient-to-r from-pink-500/20 to-blue-500/20 border-l-pink-500",
-  culinary:
+  stratergy:
     "bg-gradient-to-r from-purple-500/20 to-pink-500/20 border-l-purple-500",
-  performance:
+  social:
     "bg-gradient-to-r from-blue-500/20 to-purple-500/20 border-l-blue-500",
   break: "bg-gray-100 border-l-gray-400",
 };
@@ -188,7 +133,15 @@ const categoryColors: Record<string, string> = {
 const Schedule = () => {
   const [activeFilter, setActiveFilter] = useState<string | null>(null);
 
-  const filterEvents = (events: any[], category: string | null) => {
+  const filterEvents = (
+    events: Array<{
+      time: string;
+      name: string;
+      venue: string;
+      category: string;
+    }>,
+    category: string | null
+  ) => {
     if (!category) return events;
     return events.filter((event) => event.category === category);
   };
@@ -196,7 +149,7 @@ const Schedule = () => {
   return (
     <>
       <Navbar />
-      <main className="pt-20 pb-16">
+      <main className="pt-18">
         {/* Hero Section */}
         <section className="relative py-24 bg-gradient-to-br from-pink-900 via-purple-900 to-blue-900 overflow-hidden">
           <div className="absolute inset-0 opacity-10 animate-pulse"></div>
@@ -210,7 +163,7 @@ const Schedule = () => {
               <h1 className="font-playlist text-6xl md:text-8xl text-white mb-6 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500">
                 Event Schedule
               </h1>
-              <p className="font-playscript text-2xl text-white/90 max-w-2xl mx-auto">
+              <p className="font-sans text-2xl text-white/90 max-w-2xl mx-auto">
                 Plan your Banjaara 2025 experience with our comprehensive
                 schedule
               </p>
@@ -222,7 +175,7 @@ const Schedule = () => {
         <section className="py-16 bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50">
           <div className="container mx-auto px-6">
             <div className="mb-8">
-              <h2 className="font-playlist text-4xl mb-6 text-center bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
+              <h2 className="font-playlist text-4xl mb-6 text-center bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent pt-1 pb-3">
                 Filter by Category
               </h2>
               <div className="flex flex-wrap gap-2 justify-center">
@@ -232,8 +185,8 @@ const Schedule = () => {
                   { id: "performing", name: "Performing Arts" },
                   { id: "visual", name: "Visual Arts" },
                   { id: "literary", name: "Literary Arts" },
-                  { id: "culinary", name: "Culinary Arts" },
-                  { id: "performance", name: "Performances" },
+                  { id: "stratergy", name: "Strategy & Innovation" },
+                  { id: "social", name: "Social Eventss" },
                 ].map((category) => (
                   <Button
                     key={category.id || "all"}
@@ -251,15 +204,12 @@ const Schedule = () => {
             </div>
 
             <Tabs defaultValue="day1" className="w-full">
-              <TabsList className="grid w-full grid-cols-3 mb-8 bg-white/50 backdrop-blur-sm">
+              <TabsList className="grid w-full grid-cols-2 mb-8 bg-white/50 backdrop-blur-sm">
                 <TabsTrigger value="day1" className="text-base font-medium">
                   Day 1
                 </TabsTrigger>
                 <TabsTrigger value="day2" className="text-base font-medium">
                   Day 2
-                </TabsTrigger>
-                <TabsTrigger value="day3" className="text-base font-medium">
-                  Day 3
                 </TabsTrigger>
               </TabsList>
 
@@ -314,7 +264,7 @@ const Schedule = () => {
         </section>
 
         {/* Download Section */}
-        <section className="py-16 bg-gradient-to-br from-pink-900 via-purple-900 to-blue-900">
+        {/* <section className="py-16 bg-gradient-to-br from-pink-900 via-purple-900 to-blue-900">
           <div className="container mx-auto px-6 text-center">
             <h2 className="font-playlist text-4xl mb-6 text-white">
               Stay Updated
@@ -334,27 +284,9 @@ const Schedule = () => {
               </Button>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Venue Map */}
-        <section className="py-16 bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50">
-          <div className="container mx-auto px-6">
-            <h2 className="font-playlist text-4xl mb-6 text-center bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
-              Venue Map
-            </h2>
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-xl text-center">
-              <p className="font-playscript text-xl text-gray-600 mb-6">
-                Find your way around the festival with our interactive venue map
-              </p>
-              <div className="bg-gray-200 h-64 rounded-xl flex items-center justify-center">
-                <MapPin className="h-12 w-12 text-gray-400" />
-                <p className="font-playscript text-gray-500 ml-4">
-                  Interactive Map Will Be Available Soon
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
 
       <Footer />
