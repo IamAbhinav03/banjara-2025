@@ -3,95 +3,79 @@ import { useState } from "react";
 import Navbar from "@/components/Navbar/Navarbar";
 import Footer from "@/components/Footer/Footer";
 import { Button } from "@/components/ui/button";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { Input } from "@/components/ui/input";
-import { Search, Instagram, Linkedin, Mail } from "lucide-react";
 
 // Sample team data - replace with actual data
 const teamData = {
   departments: [
     {
-      name: "Core Team",
+      name: "Fest Secretaries",
       members: [
         {
-          name: "John Doe",
-          role: "Festival Director",
-          image: "/team/john-doe.jpg",
-          socials: {
-            instagram: "https://instagram.com/johndoe",
-            linkedin: "https://linkedin.com/in/johndoe",
-            email: "john@example.com",
-          },
+          name: "Ushnish Bhattacharya",
+          role: "Fest Secretary",
+          image: "/team/ushnish.jpg",
         },
-        // Add more core team members
+        {
+          name: "Parvi Takkar",
+          role: "Deputy Fest Secretary, Competitions and Informals",
+          image: "/team/parvi.jpeg",
+        },
+        {
+          name: "Krish Goenka",
+          role: "Deputy Fest Secretary",
+          image: "/team/krish.jpeg",
+        },
+        {
+          name: "Achintya Nevatia",
+          role: "Deputy Fest Secretary",
+          image: "/team/achintya.jpeg",
+        },
       ],
     },
     {
-      name: "Technical Team",
+      name: "Head of Departments",
       members: [
         {
-          name: "Jane Smith",
-          role: "Technical Head",
-          image: "/team/jane-smith.jpg",
-          socials: {
-            instagram: "https://instagram.com/janesmith",
-            linkedin: "https://linkedin.com/in/janesmith",
-            email: "jane@example.com",
-          },
+          name: "Tanjal Shah",
+          role: "HOD Informal Events",
+          image: "/team/tanjal.jpeg",
         },
-        // Add more technical team members
-      ],
-    },
-    {
-      name: "Design Team",
-      members: [
         {
-          name: "Mike Johnson",
-          role: "Design Head",
-          image: "/team/mike-johnson.jpg",
-          socials: {
-            instagram: "https://instagram.com/mikejohnson",
-            linkedin: "https://linkedin.com/in/mikejohnson",
-            email: "mike@example.com",
-          },
+          name: "Viveka Ramakrishnan",
+          role: "Deputy HOD Informal Events",
+          image: "/team/viveka.jpg",
         },
-        // Add more design team members
+        {
+          name: "Sanah Arora",
+          role: "HOD Competitions",
+          image: "/team/sanah.jpeg",
+        },
+        {
+          name: "Shresth Modi",
+          role: "Deputy HOD Competitions",
+          image: "/team/shresth.jpeg",
+        },
+        {
+          name: "Varnima Agarwal",
+          role: "HOD Finance",
+          image: "/team/varnima.jpeg",
+        },
+        {
+          name: "Krishika Daga",
+          role: "HOD Finance",
+          image: "/team/krishika.jpeg",
+        },
       ],
     },
-    // Add more departments
   ],
 };
 
-const ITEMS_PER_PAGE = 6;
-
 const Team = () => {
-  const [selectedDepartment, setSelectedDepartment] = useState("all");
-  const [searchQuery, setSearchQuery] = useState("");
-  const [currentPage, setCurrentPage] = useState(1);
+  const [activeFilter, setActiveFilter] = useState<string | null>(null);
   const [expandedDepartments, setExpandedDepartments] = useState<string[]>([]);
 
   const filteredDepartments = teamData.departments.filter(
-    (dept) => selectedDepartment === "all" || dept.name === selectedDepartment
-  );
-
-  const filteredMembers = filteredDepartments.flatMap((dept) =>
-    dept.members.filter(
-      (member) =>
-        member.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        member.role.toLowerCase().includes(searchQuery.toLowerCase())
-    )
-  );
-
-  const totalPages = Math.ceil(filteredMembers.length / ITEMS_PER_PAGE);
-  const paginatedMembers = filteredMembers.slice(
-    (currentPage - 1) * ITEMS_PER_PAGE,
-    currentPage * ITEMS_PER_PAGE
+    (dept) => activeFilter === null || dept.name === activeFilter
   );
 
   const toggleDepartment = (departmentName: string) => {
@@ -105,7 +89,7 @@ const Team = () => {
   return (
     <>
       <Navbar />
-      <main className="pt-20 pb-16">
+      <main className="pt-18">
         {/* Hero Section */}
         <section className="relative py-24 bg-gradient-to-br from-pink-900 via-purple-900 to-blue-900 overflow-hidden">
           <div className="absolute inset-0 opacity-10 animate-pulse"></div>
@@ -129,35 +113,29 @@ const Team = () => {
         {/* Filters Section */}
         <section className="py-8 bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50">
           <div className="container mx-auto px-6">
-            <div className="flex flex-col md:flex-row gap-4 items-center justify-center">
-              <div className="w-full md:w-64">
-                <Select
-                  value={selectedDepartment}
-                  onValueChange={setSelectedDepartment}
+            <h2 className="font-playlist text-4xl mb-6 text-center bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent py-2">
+              Filter by Department
+            </h2>
+            <div className="flex flex-wrap gap-2 justify-center">
+              {[
+                { id: null, name: "All Departments" },
+                ...teamData.departments.map((dept) => ({
+                  id: dept.name,
+                  name: dept.name,
+                })),
+              ].map((category) => (
+                <Button
+                  key={category.id || "all"}
+                  onClick={() => setActiveFilter(category.id)}
+                  className={`px-6 py-5 rounded-full transition-all ${
+                    activeFilter === category.id
+                      ? "bg-gradient-to-r from-pink-500 to-purple-500 text-white"
+                      : "bg-white text-gray-700 hover:bg-gray-100"
+                  }`}
                 >
-                  <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Select Department" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="all">All Departments</SelectItem>
-                    {teamData.departments.map((dept) => (
-                      <SelectItem key={dept.name} value={dept.name}>
-                        {dept.name}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-              <div className="w-full md:w-64 relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-                <Input
-                  type="text"
-                  placeholder="Search team members..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-10"
-                />
-              </div>
+                  {category.name}
+                </Button>
+              ))}
             </div>
           </div>
         </section>
@@ -178,15 +156,6 @@ const Team = () => {
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {department.members
-                    .filter(
-                      (member) =>
-                        member.name
-                          .toLowerCase()
-                          .includes(searchQuery.toLowerCase()) ||
-                        member.role
-                          .toLowerCase()
-                          .includes(searchQuery.toLowerCase())
-                    )
                     .slice(
                       0,
                       expandedDepartments.includes(department.name)
@@ -217,30 +186,6 @@ const Team = () => {
                             </p>
                           </div>
                         </div>
-                        <div className="p-4 flex justify-center gap-4">
-                          <a
-                            href={member.socials.instagram}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-pink-500 hover:text-pink-600 transition-colors"
-                          >
-                            <Instagram className="w-5 h-5" />
-                          </a>
-                          <a
-                            href={member.socials.linkedin}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-blue-500 hover:text-blue-600 transition-colors"
-                          >
-                            <Linkedin className="w-5 h-5" />
-                          </a>
-                          <a
-                            href={`mailto:${member.socials.email}`}
-                            className="text-purple-500 hover:text-purple-600 transition-colors"
-                          >
-                            <Mail className="w-5 h-5" />
-                          </a>
-                        </div>
                       </motion.div>
                     ))}
                 </div>
@@ -259,31 +204,6 @@ const Team = () => {
             ))}
           </div>
         </section>
-
-        {/* Pagination */}
-        {totalPages > 1 && (
-          <section className="py-8">
-            <div className="container mx-auto px-6">
-              <div className="flex justify-center gap-2">
-                {Array.from({ length: totalPages }, (_, i) => i + 1).map(
-                  (page) => (
-                    <Button
-                      key={page}
-                      onClick={() => setCurrentPage(page)}
-                      className={`w-10 h-10 rounded-full ${
-                        currentPage === page
-                          ? "bg-gradient-to-r from-pink-500 to-purple-500 text-white"
-                          : "bg-white text-gray-600 hover:bg-gray-100"
-                      }`}
-                    >
-                      {page}
-                    </Button>
-                  )
-                )}
-              </div>
-            </div>
-          </section>
-        )}
       </main>
 
       <Footer />
