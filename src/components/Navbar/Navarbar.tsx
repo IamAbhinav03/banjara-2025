@@ -1,11 +1,10 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logo from "../../assets/logo2.svg";
 import { useEffect, useState } from "react";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const location = useLocation();
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -13,87 +12,50 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      if (window.scrollY > 10) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    document.body.style.overflow = isMobileMenuOpen ? "hidden" : "auto";
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, [isMobileMenuOpen]);
-
-  const isMainPage = location.pathname === "/";
-
   return (
-    <>
-      <nav
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-          isMainPage && !isScrolled
-            ? "bg-transparent text-white"
-            : "backdrop-blur-md bg-[#f8f8f8] text-black"
-        }`}
-        style={{ fontFamily: "'Inter', sans-serif" }}
+    <nav
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+        isScrolled
+          ? "transform -translate-y-full opacity-0"
+          : "transform translate-y-0 opacity-100"
+      }`}
+    >
+      <div
+        className="w-full mx-auto px-4 py-4 flex justify-between items-center"
+        style={{
+          background:
+            "linear-gradient(to right, rgba(100, 65, 165, 0.8), rgba(255, 165, 0, 0.8), rgba(62, 33, 251, 0.8))", // Adjust colors and opacity
+          backdropFilter: "blur(1px)", // Optional blur
+        }}
       >
-        <div className="w-full px-6 py-4 flex justify-between items-center">
-          {/* Logo */}
-          <div className="flex items-center gap-6">
-            <img
-              src={logo}
-              alt="Banjaara Logo"
-              className="w-12 h-12"
-              style={{ transform: "scale(1.5)", transformOrigin: "left" }}
-            />
-          </div>
-
-          {/* Desktop Menu */}
-          <div className="hidden md:flex gap-10">
-            <Link to="/" className="hover:underline font-semibold">Home</Link>
-            <Link to="/competitions" className="hover:text-pink-500 font-medium">Competitions</Link>
-            <Link to="/team" className="hover:text-pink-500 font-medium">Team</Link>
-            <Link to="/schedule" className="hover:text-pink-500 font-medium">Schedule</Link>
-            <Link to="/contact" className="hover:text-pink-500 font-medium">Contact</Link>
-          </div>
-
-          {/* Mobile Toggle */}
-          <div className="md:hidden">
-            <button onClick={toggleMobileMenu} className="text-black z-50 relative">
-              <svg
-                className="h-6 w-6 fill-current"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                {isMobileMenuOpen ? (
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.829-4.828 4.829a1 1 0 0 1-1.414-1.414l4.829-4.828-4.828-4.829a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.829 4.828z"
-                  />
-                ) : (
-                  <path
-                    fillRule="evenodd"
-                    d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2z"
-                  />
-                )}
-              </svg>
-            </button>
-          </div>
+        <div className="flex items-center gap-2">
+          <img
+            src={logo}
+            alt="Banjaara Logo"
+            className="w-10 h-10"
+            style={{ transform: "scale(3)", transformOrigin: "left" }}
+          />
         </div>
-      </nav>
 
-      {/* TRUE FULLPAGE OVERLAY (within its own full wrapper div) */}
-      {isMobileMenuOpen && (
-        <div className="fixed top-0 left-0 w-full h-full z-[9999] bg-white flex flex-col justify-center items-center transition-all duration-300">
-          <div className="absolute top-4 right-4">
-            <button onClick={toggleMobileMenu} className="text-black">
-              <svg
-                className="h-6 w-6 fill-current"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+        <div className="md:hidden">
+          <button onClick={toggleMobileMenu} className="text-white">
+            <svg
+              className="h-6 w-6 fill-current"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              {isMobileMenuOpen ? (
                 <path
                   fillRule="evenodd"
                   clipRule="evenodd"
@@ -133,46 +95,27 @@ export default function Navbar() {
           </Link>
         </div>
 
-
-          <div className="flex flex-col items-center gap-6">
-            <Link
-              to="/"
-              onClick={toggleMobileMenu}
-              className="text-black text-2xl font-semibold"
-            >
+        <div
+          className={`${
+            isMobileMenuOpen ? "block" : "hidden"
+          } md:hidden absolute top-full left-0 w-full bg-white/80 backdrop-blur-lg mt-1`}
+        >
+          <div className="flex flex-col items-center py-4">
+            <a href="#home" className="text-black py-2 hover:underline">
               Home
-            </Link>
+            </a>
             <Link
               to="/competitions"
-              onClick={toggleMobileMenu}
-              className="text-black text-2xl font-medium"
+              className="text-black py-2 hover:underline"
             >
-              Competitions
+              Competition
             </Link>
-            <Link
-              to="/team"
-              onClick={toggleMobileMenu}
-              className="text-black text-2xl font-medium"
-            >
-              Team
-            </Link>
-            <Link
-              to="/schedule"
-              onClick={toggleMobileMenu}
-              className="text-black text-2xl font-medium"
-            >
-              Schedule
-            </Link>
-            <Link
-              to="/contact"
-              onClick={toggleMobileMenu}
-              className="text-black text-2xl font-medium"
-            >
-              Contact
-            </Link>
+            <a href="#meetings" className="text-black py-2 hover:underline">
+              Meetings
+            </a>
           </div>
         </div>
-      )}
-    </>
+      </div>
+    </nav>
   );
 }
