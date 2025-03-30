@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import App from "./App.tsx";
 import Competitions from "./components/Competitions/Competitions.tsx";
+import Events from "./components/Events/Events.tsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -12,6 +13,10 @@ const router = createBrowserRouter([
   {
     path: "/competitions",
     element: <Competitions />,
+  },
+  {
+    path: "/events",
+    element: <Events />,
   },
 ]);
 

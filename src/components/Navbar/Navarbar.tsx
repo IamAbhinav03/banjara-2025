@@ -52,13 +52,16 @@ export default function Navbar() {
         </div>
 
         <div className="hidden md:flex gap-6">
-          <a href="#home" className="text-white hover:underline">
+          <a href="/" className="text-white hover:underline">
             Home
           </a>
           <Link to="/competitions" className="text-white hover:underline">
             Competition
           </Link>
-          <a href="#meetings" className="text-white hover:underline">
+          <Link to="/events" className="text-white hover:underline">
+            Events
+          </Link>
+          <a href="/meetings" className="text-white hover:underline">
             Meetings
           </a>
         </div>
@@ -77,6 +80,12 @@ export default function Navbar() {
               className="text-black py-2 hover:underline"
             >
               Competition
+            </Link>
+            <Link
+              to="/events"
+              className="text-black py-2 hover:underline"
+            >
+              Events
             </Link>
             <a href="#meetings" className="text-black py-2 hover:underline">
               Meetings
