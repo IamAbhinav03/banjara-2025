@@ -10,103 +10,211 @@ import {
 import Navbar from "@/components/Navbar/Navarbar";
 import Footer from "@/components/Footer/Footer";
 import { Button } from "@/components/ui/button";
-import { MapPin, Gift, ChevronRight } from "lucide-react";
+import { MapPin, Gift, Users, IndianRupee } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const competitionsData = [
   {
     category: "Performing Arts",
     items: [
       {
-        name: "Nritya Sangam",
+        name: "नाटक BAAZI",
         description:
-          "Group dance competition showcasing classical and folk dance forms",
-        prize: "₹15,000",
-        venue: "Main Auditorium",
+          "A raw, unfiltered storytelling platform in the spirit of street theatre. Teams blend powerful performances, social commentary, and creative expression.",
+        details: {
+          teamSize: "15-20 + 3 (set up)",
+          registrationFee: "Rs. 900",
+          prizePool: "Rs. 20,000",
+        },
       },
       {
-        name: "Sur Tarang",
+        name: "SYNERGY WESTERN GROUP DANCE",
         description:
-          "Solo and duet singing competition for classical and contemporary styles",
-        prize: "₹10,000",
-        venue: "Music Hall",
+          "A dynamic Western dance competition showcasing various styles like street, jazz, and hip-hop.",
+        details: {
+          teamSize: "7-20",
+          registrationFee: "Rs. 1000",
+          prizePool: "Rs. 30,000",
+        },
       },
       {
-        name: "Natya Manch",
+        name: "BATTLE OF THE BANDS",
         description:
-          "Theatrical performance competition highlighting social themes",
-        prize: "₹12,000",
-        venue: "Open Air Theatre",
+          "An electrifying clash of college bands, showcasing their musical prowess across various genres.",
+        details: {
+          teamSize: "3-8",
+          registrationFee: "Rs. 1000",
+          prizePool: "Rs. 25,000",
+        },
+      },
+      {
+        name: "CONCORDIA ACAPELLA COMPETITION",
+        description:
+          "A pure vocal magic competition where teams create intricate harmonies and arrangements without instruments.",
+        details: {
+          teamSize: "7-15",
+          registrationFee: "Rs. 800",
+          prizePool: "Rs. 12,000",
+        },
       },
     ],
   },
   {
-    category: "Visual Arts",
+    category: "Creative Arts",
     items: [
       {
-        name: "Rang Bahar",
+        name: "FACE CARD STYLING COMPETITION",
         description:
-          "On-the-spot painting competition inspired by Indian festivals",
-        prize: "₹8,000",
-        venue: "Art Gallery",
+          "A hair and makeup competition where teams create transformations based on a given theme.",
+        details: {
+          teamSize: "2+1",
+          registrationFee: "Rs. 400",
+          prizePool: "Rs. 15,000",
+        },
       },
       {
-        name: "Digital Canvas",
+        name: "BEYOND THE BRUSH",
         description:
-          "Digital art competition blending tradition with technology",
-        prize: "₹9,000",
-        venue: "Digital Lab",
+          "A mixed media art competition challenging participants to blend colors, textures, and materials.",
+        details: {
+          teamSize: "1-3",
+          registrationFee: "Rs. 150",
+          prizePool: "Rs. 5,000",
+        },
       },
       {
-        name: "Craft Carnival",
-        description: "Handicraft competition using sustainable materials",
-        prize: "₹7,000",
-        venue: "Craft Center",
+        name: "FRAME BY FRAME",
+        description:
+          "A short film competition blending pre-shot footage with on-campus scenes.",
+        details: {
+          teamSize: "2-6",
+          registrationFee: "Rs. 500",
+          prizePool: "Rs. 15,000",
+        },
+      },
+      {
+        name: "RANGREZA",
+        description:
+          "An experimental portrait photography competition using light, motion, and vibrant hues.",
+        details: {
+          teamSize: "1 photographer + 1 model",
+          registrationFee: "Rs. 300",
+          prizePool: "Rs. 7,000",
+        },
       },
     ],
   },
   {
-    category: "Literary Arts",
+    category: "Debate & Public Speaking",
     items: [
       {
-        name: "Kavi Sammelan",
-        description: "Poetry recitation in various Indian languages",
-        prize: "₹6,000",
-        venue: "Literature Hall",
+        name: "BHASHA, BAAT, AUR BAKAR",
+        description:
+          "An open mic event blending poetry, storytelling, and humor in Hindustani culture.",
+        details: {
+          teamSize: "Individual",
+          registrationFee: "Rs. 100",
+          prizePool: "Rs. 4,000",
+        },
       },
       {
-        name: "Katha Kathan",
-        description: "Storytelling competition based on folklore and mythology",
-        prize: "₹7,000",
-        venue: "Library Amphitheatre",
-      },
-      {
-        name: "Debate Dynasty",
-        description: "Competitive debate on cultural and societal topics",
-        prize: "₹8,000",
-        venue: "Conference Room",
+        name: "TURNCOAT DEBATE",
+        description:
+          "A debate competition requiring participants to argue both sides of a motion.",
+        details: {
+          teamSize: "Individual",
+          registrationFee: "Rs. 250",
+          prizePool: "Rs. 7,000",
+        },
       },
     ],
   },
   {
-    category: "Culinary Arts",
+    category: "Other Competitions",
     items: [
       {
-        name: "Zaika",
-        description: "Cooking competition featuring regional Indian cuisines",
-        prize: "₹10,000",
-        venue: "Food Court",
+        name: "THE CORPORATE CONQUEST",
+        description:
+          "A business strategy challenge involving crisis management and market manipulation.",
+        details: {
+          teamSize: "3-6",
+          registrationFee: "Rs. 200",
+          prizePool: "Rs. 20,000",
+        },
       },
       {
-        name: "Sweet Symphony",
-        description: "Traditional Indian dessert preparation contest",
-        prize: "₹6,000",
-        venue: "Culinary Lab",
+        name: "MARVEL RIVALS",
+        description: "A 3v3 Marvel Rivals hero shooter tournament.",
+        details: {
+          teamSize: "3",
+          registrationFee: "Rs. 400",
+          prizePool: "Rs. 6,000",
+        },
+      },
+      {
+        name: "THE QUIZZING COMPETITION",
+        description: "A general knowledge quiz competition.",
+        details: {
+          teamSize: "Up to 3",
+          registrationFee: "Rs. 50/person",
+          prizePool: "Rs. 10,000",
+        },
+      },
+      {
+        name: "AD-MAD",
+        description: "An advertising campaign creation competition.",
+        details: {
+          teamSize: "1-3",
+          registrationFee: "Rs. 150/person",
+          prizePool: "Rs. 7,000",
+        },
+      },
+      {
+        name: "THE GEOPOLITICAL INTELLIGENCE CHALLENGE",
+        description:
+          "A foreign policy simulation and crisis response competition.",
+        details: {
+          teamSize: "3-4",
+          registrationFee: "Rs. 200/team",
+          prizePool: "Rs. 4,000",
+        },
+      },
+      {
+        name: "FOOD FIESTA",
+        description: "A speed-eating competition.",
+        details: {
+          teamSize: "Individual",
+          registrationFee: "ON-THE-SPOT Rs. 50",
+          prizePool: "Rs. 4,000",
+        },
+      },
+      {
+        name: "THE FITNESS CHALLENGE",
+        description: "A plank endurance challenge.",
+        details: {
+          teamSize: "Individual",
+          registrationFee: "ON-THE-SPOT Rs. 50",
+          prizePool: "Exciting prizes",
+        },
       },
     ],
   },
 ];
 
 const Competitions = () => {
+  const navigate = useNavigate();
+
+  const handleViewDetails = (category: string, item: any) => {
+    navigate(
+      `/competitions/${category.toLowerCase().replace(/\s+/g, "-")}/${item.name
+        .toLowerCase()
+        .replace(/\s+/g, "-")}`,
+      {
+        state: { category, item },
+      }
+    );
+  };
+
   return (
     <>
       <Navbar />
@@ -164,34 +272,51 @@ const Competitions = () => {
                         transition={{ duration: 0.4, delay: itemIndex * 0.1 }}
                         className="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
                       >
-                        <CardHeader>
-                          <CardTitle className="font-playlist text-2xl text-gray-800 flex items-center gap-2">
-                            {item.name}
-                          </CardTitle>
-                          <CardDescription className="font-playscript text-gray-600">
-                            {item.description}
-                          </CardDescription>
-                        </CardHeader>
-                        <CardContent className="flex-grow flex flex-col justify-end gap-3">
-                          <div className="flex items-center text-sm text-gray-600">
-                            <Gift className="w-5 h-5 mr-2 text-pink-500" />
-                            <span className="font-medium">Prize:</span>{" "}
-                            <span className="text-pink-600 font-semibold">
-                              {item.prize}
-                            </span>
-                          </div>
-                          <div className="flex items-center text-sm text-gray-600">
-                            <MapPin className="w-5 h-5 mr-2 text-purple-500" />
-                            <span className="font-medium">Venue:</span>{" "}
-                            <span className="text-purple-600">
-                              {item.venue}
-                            </span>
-                          </div>
-                          <Button className="mt-4 w-full bg-gradient-to-r from-pink-500 to-purple-500 text-white hover:from-pink-600 hover:to-purple-600 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl">
-                            View Details{" "}
-                            <ChevronRight className="ml-2 h-4 w-4" />
-                          </Button>
-                        </CardContent>
+                        <Card className="h-full flex flex-col">
+                          <CardHeader>
+                            <CardTitle className="font-playlist text-2xl flex items-center gap-2 antialiased">
+                              {item.name}
+                            </CardTitle>
+                            <CardDescription className="font-playscript text-gray-600 line-clamp-3">
+                              {item.description}
+                            </CardDescription>
+                          </CardHeader>
+                          <CardContent className="flex-grow flex flex-col justify-end gap-3">
+                            <div className="flex items-center text-sm text-gray-600">
+                              <Gift className="w-5 h-5 mr-2 text-pink-500" />
+                              <span className="font-medium">
+                                Prize Pool:
+                              </span>{" "}
+                              <span className="text-pink-600 font-semibold">
+                                {item.details.prizePool}
+                              </span>
+                            </div>
+                            <div className="flex items-center text-sm text-gray-600">
+                              <IndianRupee className="w-5 h-5 mr-2 text-purple-500" />
+                              <span className="font-medium">Registration:</span>{" "}
+                              <span className="text-purple-600">
+                                {item.details.registrationFee}
+                              </span>
+                            </div>
+                            <div className="flex items-center text-sm text-gray-600">
+                              <Users className="w-5 h-5 mr-2 text-blue-500" />
+                              <span className="font-medium">
+                                Team Size:
+                              </span>{" "}
+                              <span className="text-blue-600">
+                                {item.details.teamSize}
+                              </span>
+                            </div>
+                            <Button
+                              onClick={() =>
+                                handleViewDetails(category.category, item)
+                              }
+                              className="mt-4 w-full bg-gradient-to-r from-pink-500 to-purple-500 text-white hover:from-pink-600 hover:to-purple-600 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
+                            >
+                              View Details
+                            </Button>
+                          </CardContent>
+                        </Card>
                       </motion.div>
                     ))}
                   </div>
@@ -220,48 +345,6 @@ const Competitions = () => {
               <Button className="px-8 py-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-full font-semibold hover:from-pink-600 hover:to-purple-600 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl">
                 Register Now
               </Button>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Rules Section */}
-        <section className="py-16 bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50 relative overflow-hidden">
-          <div className="absolute inset-0 opacity-5"></div>
-          <div className="container mx-auto px-6 relative">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <h2 className="font-playlist text-4xl md:text-5xl text-center mb-8 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
-                General Rules
-              </h2>
-              <Card className="bg-white rounded-2xl shadow-xl border-0">
-                <CardContent className="p-8">
-                  <ul className="space-y-4 text-gray-700">
-                    {[
-                      "All participants must register at least 3 days before the event",
-                      "Participants must report 30 minutes before their scheduled time",
-                      "Any form of plagiarism will result in immediate disqualification",
-                      "The judge's decision will be final and binding",
-                      "Each team can have a maximum of 5 members unless specified otherwise",
-                      "All participants must carry valid ID proof",
-                      "Any damage to venue property will be charged to the responsible participants",
-                    ].map((rule, index) => (
-                      <motion.li
-                        key={index}
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.4, delay: index * 0.1 }}
-                        className="flex items-start gap-3"
-                      >
-                        <span className="text-pink-500">•</span>
-                        <span className="font-playscript">{rule}</span>
-                      </motion.li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
             </motion.div>
           </div>
         </section>
