@@ -55,7 +55,6 @@ export default function Home() {
           </div>
         </main>
       </section>
-
       {/* Festival Information & Countdown Section */}
       {/* {/* <section className="py-24 bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50 relative overflow-hidden"> */}
       {/* <div className="absolute inset-0 bg-[url('/pattern.png')] opacity-10"></div> */}
@@ -101,7 +100,6 @@ export default function Home() {
               </div>
             </div>
           </motion.div> */}
-
       {/* Experience Highlights */}
       {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {[
@@ -150,7 +148,6 @@ export default function Home() {
           </div>
         </div>
       </section> */}
-
       {/* Festival Information & Countdown Section */}
       <section className="py-24 bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50 relative overflow-hidden">
         <div className="container mx-auto px-6 relative">
@@ -164,18 +161,37 @@ export default function Home() {
               The Cultural Extravaganza Awaits
             </h2>
             <p className="font-playscript text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              Get ready for three days of pure magic! Experience mesmerizing
-              performances, artistic brilliance, and an unforgettable cultural
-              celebration at Ashoka University's biggest festival.
+              Banjaara 2025 is Ashoka University's flagship cultural festival,
+              drawing thousands from Delhi-NCR and beyond. Get ready for two
+              unforgettable days of music, dance, theater, entrepreneurship, and
+              vibrant student-driven stalls. This year’s theme, Rangsaaj,
+              celebrates the artist within us all—a tribute to individuality and
+              harmony, where life’s colors blend into a grand masterpiece. With
+              electrifying performances and surprises awaiting, brace yourself
+              for an experience like never before. Join us on 5th and 6th April
+              to witness the magic unfold!
             </p>
 
             {/* Countdown Timer */}
             <div className="mt-12 mb-16">
               <div className="flex justify-center gap-8">
                 {[
-                  { label: "Days", value: "124" },
-                  { label: "Hours", value: "08" },
-                  { label: "Minutes", value: "45" },
+                  {
+                    label: "Days",
+                    value: Math.floor(
+                      (new Date("2025-04-05").getTime() -
+                        new Date().getTime()) /
+                        (1000 * 60 * 60 * 24)
+                    ).toString(),
+                  },
+                  {
+                    label: "Hours",
+                    value: String(new Date().getHours()).padStart(2, "0"),
+                  },
+                  {
+                    label: "Minutes",
+                    value: String(new Date().getMinutes()).padStart(2, "0"),
+                  },
                 ].map((time, index) => (
                   <motion.div
                     key={index}
@@ -203,6 +219,53 @@ export default function Home() {
               </p>
             </div>
 
+            {/* Experience Highlights */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-12">
+              {[
+                {
+                  title: "Electrifying Performances",
+                  description:
+                    "Get ready for thrilling shows by external artists that will light up the stage and leave you in awe.",
+                  icon: "🎤",
+                  gradient: "from-red-500 to-pink-500",
+                },
+                {
+                  title: "Cultural Competitions",
+                  description:
+                    "Show off your talents and compete for big cash prizes across various cultural and artistic challenges.",
+                  icon: "🏆",
+                  gradient: "from-yellow-500 to-orange-500",
+                },
+                {
+                  title: "Food & Fun Galore",
+                  description:
+                    "Savor delicious dishes from numerous food stalls while enjoying small fun activities and games throughout the venue.",
+                  icon: "🍔",
+                  gradient: "from-green-500 to-teal-500",
+                },
+              ].map((experience, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.2 }}
+                  className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+                >
+                  <div
+                    className={`text-6xl mb-6 bg-gradient-to-r ${experience.gradient} bg-clip-text text-transparent`}
+                  >
+                    {experience.icon}
+                  </div>
+                  <h3 className="font-playlist text-2xl font-bold text-gray-800 mb-4">
+                    {experience.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {experience.description}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+
             {/* Call to Action Example (Add your actual link) */}
             <div className="mt-10">
               <a
@@ -213,56 +276,8 @@ export default function Home() {
               </a>
             </div>
           </motion.div>
-
-          {/* Experience Highlights */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {[
-              {
-                title: "Artistic Paradise",
-                description:
-                  "Immerse yourself in a world of breathtaking art installations and mesmerizing dance performances. Witness creativity unbound!",
-                icon: "✨",
-                gradient: "from-pink-500 to-purple-500",
-              },
-              {
-                title: "Musical Journey",
-                description:
-                  "Experience soul-stirring melodies and electrifying performances from renowned artists and emerging talents. Get ready to be moved!",
-                icon: "🎵",
-                gradient: "from-purple-500 to-blue-500",
-              },
-              {
-                title: "Cultural Fusion",
-                description:
-                  "Celebrate the vibrant tapestry of cultures with captivating showcases and fusion performances. A true celebration of diversity!",
-                icon: "🎭",
-                gradient: "from-blue-500 to-pink-500",
-              },
-            ].map((experience, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-                className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
-              >
-                <div
-                  className={`text-6xl mb-6 bg-gradient-to-r ${experience.gradient} bg-clip-text text-transparent`}
-                >
-                  {experience.icon}
-                </div>
-                <h3 className="font-playlist text-2xl font-bold text-gray-800 mb-4">
-                  {experience.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {experience.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
-
       {/* Mystery Guest Section */}
       <section className="py-32 bg-gradient-to-br from-pink-900 via-purple-900 to-blue-900 relative overflow-hidden">
         <div className="absolute inset-0s opacity-10 animate-pulse"></div>
@@ -303,7 +318,6 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-
       {/* Throwback Gallery Section */}
       <section className="py-24 bg-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-5"></div>

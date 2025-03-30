@@ -1,16 +1,34 @@
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo2.svg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Navbar() {
+  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <nav className="fixed top-0 left-0 w-full z-50">
+    <nav
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        isScrolled ? "invisible" : "visible"
+      }`}
+    >
       <div
         className="w-full mx-auto px-4 py-4 flex justify-between items-center"
         style={{
