@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: Playlist;
+  src: url("/fonts/Playlist\ Script.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@theme {
+  --font-playlist: Playlist;
+}
