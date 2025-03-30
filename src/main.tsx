@@ -5,6 +5,8 @@ import "./index.css";
 import App from "./App.tsx";
 import Competitions from "./components/Competitions/Competitions.tsx";
 import CompetitionDetails from "./components/Competitions/CompetitionDetails.tsx";
+import Team from "./components/Team/Team.tsx";
+import Schedule from "./components/Schedule/Schedule.tsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -17,6 +19,14 @@ const router = createBrowserRouter([
   {
     path: "/competitions/:category/:name",
     element: <CompetitionDetails />,
+  },
+  {
+    path: "/team",
+    element: <Team />,
+  },
+  {
+    path: "/schedule",
+    element: <Schedule />,
   },
 ]);
 

@@ -72,15 +72,30 @@ export default function Navbar() {
         </div>
 
         <div className="hidden md:flex gap-6">
-          <a href="#home" className="text-white hover:underline">
+          <Link to="/" className="text-white hover:underline">
             Home
-          </a>
-          <Link to="/competitions" className="text-white hover:underline">
-            Competition
           </Link>
-          <a href="#meetings" className="text-white hover:underline">
-            Meetings
-          </a>
+          <Link
+            to="/competitions"
+            className="text-white hover:text-pink-300 transition-colors"
+          >
+            Competitions
+          </Link>
+          <Link
+            to="/team"
+            className="text-white hover:text-pink-300 transition-colors"
+          >
+            Team
+          </Link>
+          <Link to="/schedule" className="text-white hover:underline">
+            Schedule
+          </Link>
+          <Link
+            to="/contact"
+            className="text-white hover:text-pink-300 transition-colors"
+          >
+            Contact
+          </Link>
         </div>
 
         <div

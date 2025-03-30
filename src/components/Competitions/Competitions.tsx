@@ -28,7 +28,7 @@ const competitionsData = [
         },
       },
       {
-        name: "SYNERGY WESTERN GROUP DANCE",
+        name: "Synergy Western Group Dance",
         description:
           "A dynamic Western dance competition showcasing various styles like street, jazz, and hip-hop.",
         details: {
@@ -38,7 +38,7 @@ const competitionsData = [
         },
       },
       {
-        name: "BATTLE OF THE BANDS",
+        name: "Battle of the Bands",
         description:
           "An electrifying clash of college bands, showcasing their musical prowess across various genres.",
         details: {
@@ -48,7 +48,7 @@ const competitionsData = [
         },
       },
       {
-        name: "CONCORDIA ACAPELLA COMPETITION",
+        name: "Concordia Acapella Competition",
         description:
           "A pure vocal magic competition where teams create intricate harmonies and arrangements without instruments.",
         details: {
@@ -63,7 +63,7 @@ const competitionsData = [
     category: "Creative Arts",
     items: [
       {
-        name: "FACE CARD STYLING COMPETITION",
+        name: "Face Card Styling Competition",
         description:
           "A hair and makeup competition where teams create transformations based on a given theme.",
         details: {
@@ -73,7 +73,7 @@ const competitionsData = [
         },
       },
       {
-        name: "BEYOND THE BRUSH",
+        name: "Beyond the Brush",
         description:
           "A mixed media art competition challenging participants to blend colors, textures, and materials.",
         details: {
@@ -83,7 +83,7 @@ const competitionsData = [
         },
       },
       {
-        name: "FRAME BY FRAME",
+        name: "Frame by Frame",
         description:
           "A short film competition blending pre-shot footage with on-campus scenes.",
         details: {
@@ -93,7 +93,7 @@ const competitionsData = [
         },
       },
       {
-        name: "RANGREZA",
+        name: "Rangreza",
         description:
           "An experimental portrait photography competition using light, motion, and vibrant hues.",
         details: {
@@ -108,7 +108,7 @@ const competitionsData = [
     category: "Debate & Public Speaking",
     items: [
       {
-        name: "BHASHA, BAAT, AUR BAKAR",
+        name: "Bhasha, Baat, Aur Bakar",
         description:
           "An open mic event blending poetry, storytelling, and humor in Hindustani culture.",
         details: {
@@ -118,7 +118,7 @@ const competitionsData = [
         },
       },
       {
-        name: "TURNCOAT DEBATE",
+        name: "Turncoat Debate",
         description:
           "A debate competition requiring participants to argue both sides of a motion.",
         details: {
@@ -133,7 +133,7 @@ const competitionsData = [
     category: "Other Competitions",
     items: [
       {
-        name: "THE CORPORATE CONQUEST",
+        name: "The Corporate Conquest",
         description:
           "A business strategy challenge involving crisis management and market manipulation.",
         details: {
@@ -143,7 +143,7 @@ const competitionsData = [
         },
       },
       {
-        name: "MARVEL RIVALS",
+        name: "Marvel Rivals",
         description: "A 3v3 Marvel Rivals hero shooter tournament.",
         details: {
           teamSize: "3",
@@ -152,7 +152,7 @@ const competitionsData = [
         },
       },
       {
-        name: "THE QUIZZING COMPETITION",
+        name: "The Quizzling Competition",
         description: "A general knowledge quiz competition.",
         details: {
           teamSize: "Up to 3",
@@ -170,7 +170,7 @@ const competitionsData = [
         },
       },
       {
-        name: "THE GEOPOLITICAL INTELLIGENCE CHALLENGE",
+        name: "The Geopolitical Intelligence Challenge",
         description:
           "A foreign policy simulation and crisis response competition.",
         details: {
@@ -180,7 +180,7 @@ const competitionsData = [
         },
       },
       {
-        name: "FOOD FIESTA",
+        name: "Food Fiesta",
         description: "A speed-eating competition.",
         details: {
           teamSize: "Individual",
@@ -189,7 +189,7 @@ const competitionsData = [
         },
       },
       {
-        name: "THE FITNESS CHALLENGE",
+        name: "The Fitness Challenge",
         description: "A plank endurance challenge.",
         details: {
           teamSize: "Individual",
@@ -274,7 +274,7 @@ const Competitions = () => {
                       >
                         <Card className="h-full flex flex-col">
                           <CardHeader>
-                            <CardTitle className="font-playlist text-2xl flex items-center gap-2 antialiased">
+                            <CardTitle className="font-playlist text-2xl md:text-4xl mb-6 bg-clip-text flex items-center gap-2 ">
                               {item.name}
                             </CardTitle>
                             <CardDescription className="font-playscript text-gray-600 line-clamp-3">
