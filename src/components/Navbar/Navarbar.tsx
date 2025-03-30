@@ -99,9 +99,40 @@ export default function Navbar() {
                   clipRule="evenodd"
                   d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.829-4.828 4.829a1 1 0 0 1-1.414-1.414l4.829-4.828-4.828-4.829a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.829 4.828z"
                 />
-              </svg>
-            </button>
-          </div>
+              ) : (
+                <path
+                  fillRule="evenodd"
+                  d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2z"
+                />
+              )}
+            </svg>
+          </button>
+        </div>
+
+        <div className="hidden md:flex gap-6">
+          <Link to="/" className="font-sans text-white hover:underline">
+            Home
+          </Link>
+          <Link
+            to="/competitions"
+            className="font-sans text-white hover:text-pink-300 transition-colors"
+          >
+            Competitions
+          </Link>
+          <Link
+            to="/schedule"
+            className="font-sans text-white hover:text-pink-300 transition-colors"
+          >
+            Schedule
+          </Link>
+          <Link
+            to="/team"
+            className="font-sans text-white hover:text-pink-300 transition-colors"
+          >
+            Team
+          </Link>
+        </div>
+
 
           <div className="flex flex-col items-center gap-6">
             <Link
