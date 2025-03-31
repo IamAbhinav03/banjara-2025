@@ -1,10 +1,10 @@
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 // import logo from "../../assets/logo2.svg";
 import logoWhite from "../../assets/logo-white.svg";
 import { useEffect, useState } from "react";
 
 export default function Navbar() {
-  const location = useLocation();
+  // const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -34,8 +34,7 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
-  const isActive = (path: string) => location.pathname === path;
-
+  // const isActive = (path: string) => location.pathname === path;
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${

@@ -19,8 +19,7 @@ interface CompetitionDetails {
 const CompetitionDetails = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { category, item } = location.state as {
-    category: string;
+  const { item } = location.state as {
     item: CompetitionDetails;
   };
 
