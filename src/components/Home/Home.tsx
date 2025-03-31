@@ -1,8 +1,6 @@
 // import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import backgroundVideo from "../../assets/background.mp4"; // Replace with your actual video file
-import galleryImage2 from "../../assets/react.svg";
-import galleryImage3 from "../../assets/react.svg";
 import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/Navbar/Navarbar";
 import { useState } from "react";
@@ -347,12 +345,12 @@ export default function Home() {
           </motion.div>
           <div className="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4">
             {[
-              "https://source.unsplash.com/random/800x600?dance",
-              "https://source.unsplash.com/random/800x800?music",
-              "https://source.unsplash.com/random/800x1000?festival",
-              "https://source.unsplash.com/random/800x700?concert",
-              galleryImage2,
-              galleryImage3,
+              "/gallery/img1.JPG",
+              "/gallery/img2.JPG",
+              "/gallery/img3.JPG",
+              "/gallery/img4.JPG",
+              "/gallery/img5.JPG",
+              "/gallery/img6.JPG",
             ].map((image, index) => (
               <motion.div
                 key={index}

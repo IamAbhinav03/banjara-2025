@@ -221,7 +221,7 @@ const Competitions = () => {
   return (
     <>
       <Navbar />
-      <main className="pt-18">
+      <main>
         {/* Hero Section */}
         <section className="relative py-24 bg-gradient-to-br from-pink-900 via-purple-900 to-blue-900 overflow-hidden">
           <div className="absolute inset-0 opacity-10 animate-pulse"></div>
