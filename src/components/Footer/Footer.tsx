@@ -21,8 +21,8 @@ export default function Footer() {
               <img
                 src={logo}
                 alt="Banjaara Logo"
-                className="w-5 h-5 pl-2"
-                style={{ transform: "scale(15)", transformOrigin: "center" }}
+                className="w-4 h-4 pl--4"
+                style={{ transform: "scale(10)", transformOrigin: "left" }}
               />
             </div>
             <p className="text-lg font-playscript mt-6 text-gray-400">
