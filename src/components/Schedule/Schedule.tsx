@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 // Schedule data organized by day
 const scheduleData = {
   day1: {
-    date: "April 15, 2025",
+    date: "April 05, 2025",
     events: [
       {
         time: "10:00 AM - 04:00 PM",
@@ -66,7 +66,7 @@ const scheduleData = {
     ],
   },
   day2: {
-    date: "April 26, 2025",
+    date: "April 06, 2025",
     events: [
       {
         time: "11:00 AM - 04:00 PM",
@@ -104,11 +104,6 @@ const scheduleData = {
         venue: "TBA",
         category: "performing",
       },
-    ],
-  },
-  day3: {
-    date: "April 25, 2025",
-    events: [
       {
         time: "10:00 AM - 05:00 PM",
         name: "THE CORPORATE CONQUEST",
@@ -229,15 +224,12 @@ const Schedule = () => {
             </div>
 
             <Tabs defaultValue="day1" className="w-full">
-              <TabsList className="grid w-full grid-cols-3 mb-8 bg-white/50 backdrop-blur-sm">
+              <TabsList className="grid w-full grid-cols-2 mb-8 bg-white/50 backdrop-blur-sm">
                 <TabsTrigger value="day1" className="text-base font-medium">
                   Day 1
                 </TabsTrigger>
                 <TabsTrigger value="day2" className="text-base font-medium">
                   Day 2
-                </TabsTrigger>
-                <TabsTrigger value="day3" className="text-base font-medium">
-                  Day 3
                 </TabsTrigger>
               </TabsList>
 
@@ -263,10 +255,10 @@ const Schedule = () => {
                           >
                             <div className="flex flex-col md:flex-row md:justify-between md:items-center">
                               <div className="mb-2 md:mb-0">
-                                <h4 className="font-playlist text-xl text-gray-800">
+                                <h4 className="font-sans text-xl text-gray-800">
                                   {event.name}
                                 </h4>
-                                <p className="font-playscript text-gray-600">
+                                <p className="font-sans text-gray-600">
                                   {event.venue}
                                 </p>
                               </div>
