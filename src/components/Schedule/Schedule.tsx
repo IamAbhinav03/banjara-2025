@@ -7,108 +7,137 @@ import { Button } from "@/components/ui/button";
 // Schedule data organized by day
 const scheduleData = {
   day1: {
-    date: "April 05, 2025",
+    date: "April 15, 2025",
     events: [
       {
-        time: "09:00 AM - 10:00 AM",
-        name: "Opening Ceremony",
-        venue: "Main Stage",
-        category: "ceremony",
-      },
-      {
-        time: "10:30 AM - 12:30 PM",
-        name: "Dance Competition (Preliminary)",
-        venue: "Auditorium",
+        time: "10:00 AM - 04:00 PM",
+        name: "SYNERGY",
+        venue: "TBA",
         category: "performing",
       },
       {
-        time: "10:30 AM - 01:30 PM",
-        name: "Art Exhibition",
-        venue: "Art Gallery",
-        category: "visual",
-      },
-      {
-        time: "12:00 PM - 02:00 PM",
-        name: "Lunch Break",
-        venue: "Food Court",
-        category: "break",
-      },
-      {
-        time: "02:30 PM - 04:30 PM",
-        name: "Music Competition (Preliminary)",
-        venue: "Music Hall",
+        time: "10:00 AM - 05:00 PM",
+        name: "नाटकBAAZI",
+        venue: "TBA",
         category: "performing",
       },
       {
-        time: "03:00 PM - 05:00 PM",
-        name: "Debate Competition",
-        venue: "Literature Hall",
+        time: "03:00 PM - 06:00 PM",
+        name: "BHASHA, BAAT AUR BAKKAR",
+        venue: "TBA",
         category: "literary",
       },
       {
-        time: "05:30 PM - 07:30 PM",
-        name: "Cultural Performance",
-        venue: "Main Stage",
+        time: "10:00 AM - 05:00 PM",
+        name: "AD-MAD",
+        venue: "TBA",
+        category: "visual",
+      },
+      {
+        time: "11:00 AM - 07:00 PM",
+        name: "FRAME BY FRAME",
+        venue: "TBA",
+        category: "visual",
+      },
+      {
+        time: "11:00 AM - 04:00 PM",
+        name: "THE GEOPOLITICAL INTELLIGENCE CHALLENGE",
+        venue: "TBA",
+        category: "strategy",
+      },
+      {
+        time: "10:00 AM - 05:00 PM",
+        name: "TURNCOAT DEBATE",
+        venue: "TBA",
+        category: "literary",
+      },
+      {
+        time: "12:00 PM - 04:00 PM",
+        name: "FOOD FIESTA",
+        venue: "TBA",
         category: "social",
       },
       {
-        time: "08:00 PM - 10:00 PM",
-        name: "DJ Night",
-        venue: "Open Air Theatre",
+        time: "12:00 PM - 04:00 PM",
+        name: "THE FITNESS CHALLENGE",
+        venue: "TBA",
         category: "social",
       },
     ],
   },
   day2: {
-    date: "April 06, 2025",
+    date: "April 26, 2025",
     events: [
       {
-        time: "09:30 AM - 11:30 AM",
-        name: "Digital Art Competition",
-        venue: "Digital Lab",
-        category: "visual",
-      },
-      {
-        time: "10:00 AM - 12:00 PM",
-        name: "Drama Competition (Preliminary)",
-        venue: "Drama Studio",
+        time: "11:00 AM - 04:00 PM",
+        name: "CONCORDIA",
+        venue: "TBA",
         category: "performing",
       },
       {
-        time: "11:00 AM - 01:00 PM",
-        name: "Public Speaking",
-        venue: "Conference Room",
-        category: "literary",
+        time: "11:00 AM - 03:00 PM",
+        name: "FACE CARD",
+        venue: "TBA",
+        category: "visual",
       },
       {
-        time: "12:30 PM - 02:00 PM",
-        name: "Lunch Break",
-        venue: "Food Court",
-        category: "break",
+        time: "12:00 PM - 05:00 PM",
+        name: "BATTLE OF BANDS",
+        venue: "TBA",
+        category: "performing",
+      },
+      {
+        time: "12:00 PM - 04:00 PM",
+        name: "THE QUIZ COMPETITION",
+        venue: "TBA",
+        category: "strategy",
+      },
+      {
+        time: "11:00 AM - 05:00 PM",
+        name: "MARVEL RIVALS",
+        venue: "TBA",
+        category: "strategy",
+      },
+      {
+        time: "11:00 AM - 05:00 PM",
+        name: "RANGREZA",
+        venue: "TBA",
+        category: "performing",
+      },
+    ],
+  },
+  day3: {
+    date: "April 25, 2025",
+    events: [
+      {
+        time: "10:00 AM - 05:00 PM",
+        name: "THE CORPORATE CONQUEST",
+        venue: "TBA",
+        category: "strategy",
+      },
+      {
+        time: "12:00 PM - 03:00 PM",
+        name: "BEYOND THE BRUSH",
+        venue: "TBA",
+        category: "visual",
       },
       {
         time: "02:00 PM - 04:00 PM",
-        name: "Cooking Competition",
-        venue: "Culinary Lab",
-        category: "stratergy",
-      },
-      {
-        time: "03:00 PM - 05:00 PM",
-        name: "Photography Exhibition",
-        venue: "Craft Center",
+        name: "FRAME BY FRAME- SCREENING",
+        venue: "TBA",
         category: "visual",
       },
       {
-        time: "05:30 PM - 07:00 PM",
-        name: "Dance Competition (Finals)",
-        venue: "Main Stage",
-        category: "performing",
+        time: "12:00 PM - 04:00 PM",
+        name: "FOOD FIESTA",
+        venue: "TBA",
+        category: "social",
       },
       {
-        time: "07:30 PM - 09:30 PM",
-        name: "Celebrity Performance",
-        venue: "Main Stage",
-        category: "performance",
+        time: "12:00 PM - 04:00 PM",
+        name: "THE FITNESS CHALLENGE",
+        venue: "TBA",
+        category: "social",
       },
     ],
   },
@@ -116,18 +145,15 @@ const scheduleData = {
 
 // Category colors matching your theme
 const categoryColors: Record<string, string> = {
-  ceremony:
-    "bg-gradient-to-r from-pink-500/20 to-purple-500/20 border-l-pink-500",
   performing:
     "bg-gradient-to-r from-purple-500/20 to-blue-500/20 border-l-purple-500",
   visual: "bg-gradient-to-r from-blue-500/20 to-pink-500/20 border-l-blue-500",
   literary:
     "bg-gradient-to-r from-pink-500/20 to-blue-500/20 border-l-pink-500",
-  stratergy:
+  strategy:
     "bg-gradient-to-r from-purple-500/20 to-pink-500/20 border-l-purple-500",
   social:
     "bg-gradient-to-r from-blue-500/20 to-purple-500/20 border-l-blue-500",
-  break: "bg-gray-100 border-l-gray-400",
 };
 
 const Schedule = () => {
@@ -181,12 +207,11 @@ const Schedule = () => {
               <div className="flex flex-wrap gap-2 justify-center">
                 {[
                   { id: null, name: "All Events" },
-                  { id: "ceremony", name: "Ceremonies" },
                   { id: "performing", name: "Performing Arts" },
                   { id: "visual", name: "Visual Arts" },
                   { id: "literary", name: "Literary Arts" },
-                  { id: "stratergy", name: "Strategy & Innovation" },
-                  { id: "social", name: "Social Eventss" },
+                  { id: "strategy", name: "Strategy & Innovation" },
+                  { id: "social", name: "Social Events" },
                 ].map((category) => (
                   <Button
                     key={category.id || "all"}
@@ -204,12 +229,15 @@ const Schedule = () => {
             </div>
 
             <Tabs defaultValue="day1" className="w-full">
-              <TabsList className="grid w-full grid-cols-2 mb-8 bg-white/50 backdrop-blur-sm">
+              <TabsList className="grid w-full grid-cols-3 mb-8 bg-white/50 backdrop-blur-sm">
                 <TabsTrigger value="day1" className="text-base font-medium">
                   Day 1
                 </TabsTrigger>
                 <TabsTrigger value="day2" className="text-base font-medium">
                   Day 2
+                </TabsTrigger>
+                <TabsTrigger value="day3" className="text-base font-medium">
+                  Day 3
                 </TabsTrigger>
               </TabsList>
 

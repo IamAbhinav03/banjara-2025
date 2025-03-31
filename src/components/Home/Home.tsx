@@ -345,12 +345,12 @@ export default function Home() {
           </motion.div>
           <div className="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4">
             {[
-              "/gallery/img1.JPG",
-              "/gallery/img2.JPG",
-              "/gallery/img3.JPG",
-              "/gallery/img4.JPG",
-              "/gallery/img5.JPG",
-              "/gallery/img6.JPG",
+              "/gallery/img1.webp",
+              "/gallery/img2.webp",
+              "/gallery/img3.webp",
+              "/gallery/img4.webp",
+              "/gallery/img5.webp",
+              "/gallery/img6.webp",
             ].map((image, index) => (
               <motion.div
                 key={index}
