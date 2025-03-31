@@ -5,6 +5,7 @@ import galleryImage2 from "../../assets/react.svg";
 import galleryImage3 from "../../assets/react.svg";
 import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/Navbar/Navarbar";
+import { useState } from "react";
 
 export default function Home() {
   // const [showTagline, setShowTagline] = useState(false);
@@ -14,6 +15,11 @@ export default function Home() {
   //     setShowTagline(true);
   //   }, 1000); // Delay tagline appearance
   // }, []);
+  const [videoLoaded, setVideoLoaded] = useState(false);
+
+  const handleVideoLoad = () => {
+    setVideoLoaded(true);
+  };
 
   return (
     <>
@@ -25,6 +31,7 @@ export default function Home() {
           autoPlay
           muted
           className="absolute top-0 left-0 w-full h-full object-cover"
+          onLoadedData={handleVideoLoad}
         >
           <source src={backgroundVideo} type="video/mp4" />
         </video>
@@ -35,7 +42,9 @@ export default function Home() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 3.5, ease: "easeInOut" }}
-              className="p-10 md:p-16 mx-auto max-w-3xl"
+              className={`p-10 md:p-16 mx-auto max-w-3xl ${
+                videoLoaded ? "animation-start" : ""
+              }`}
             >
               <div className="mb-4">
                 <span className="inline-block py-2 px-4 text-sm font-semibold tracking-wider text-white bg-gradient-to-r from-pink-500 to-purple-500 rounded-full">
@@ -49,7 +58,7 @@ export default function Home() {
                 A Carnival of Magic
               </p>
               <button className="px-8 py-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-full font-semibold hover:from-pink-600 hover:to-purple-600 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl">
-                Get Early Access
+                Explore
               </button>
             </motion.div>
           </div>
@@ -157,10 +166,10 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="font-playlist text-5xl md:text-7xl bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent mb-6">
+            <h2 className="font-playlist text-5xl md:text-7xl bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent mb-6 py-4">
               The Cultural Extravaganza Awaits
             </h2>
-            <p className="font-playscript text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+            <p className="font-sans text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
               Banjaara 2025 is Ashoka University's flagship cultural festival,
               drawing thousands from Delhi-NCR and beyond. Get ready for two
               unforgettable days of music, dance, theater, entrepreneurship, and
@@ -272,7 +281,7 @@ export default function Home() {
                 href="#"
                 className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-shadow"
               >
-                Get Your Tickets Now!
+                Register Now
               </a>
             </div>
           </motion.div>
@@ -311,7 +320,7 @@ export default function Home() {
               </p>
               <div className="mt-8">
                 <button className="px-8 py-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-full font-semibold hover:from-pink-600 hover:to-purple-600 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl">
-                  Get Notified
+                  Register Now
                 </button>
               </div>
             </div>
@@ -328,7 +337,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="font-playlist text-5xl md:text-7xl font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent mb-4">
+            <h2 className="font-playlist text-5xl md:text-7xl font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent mb-4 py-4">
               Previous Editions
             </h2>
             <p className="font-playscript text-xl text-gray-600 max-w-2xl mx-auto">
