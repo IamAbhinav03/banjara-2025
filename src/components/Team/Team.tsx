@@ -21,6 +21,11 @@ const teamData = {
           image: "/team/parvi.webp",
         },
         {
+          name: "Radhika Garg",
+          role: "Deputy Fest Secretary, Finance and Sponsorships",
+          image: "/team/radhika.jpeg",
+        },
+        {
           name: "Krish Goenka",
           role: "Deputy Fest Secretary",
           image: "/team/krish.webp",
