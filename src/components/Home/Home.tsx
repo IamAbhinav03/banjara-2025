@@ -406,7 +406,7 @@ export default function Home() {
             <a
               href="https://unstop.com/events/attendee-registration-both-days-banjaara-2025-ashoka-university-sonepat-haryana-1425485"
               target="_blank"
-              className="inline-block bg-gradient-to-r from-pink-500 to-blue-500 text-white font-bold py-4 px-8 rounded-full text-xl hover:scale-105 transition-transform"
+              className="inline-block bg-gradient-to-r from-pink-500 to-purple-500 text-white font-bold py-4 px-8 rounded-full text-xl hover:scale-105 transition-transform"
             >
               SECURE YOUR SPOT NOW
             </a>
