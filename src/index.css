@@ -1,14 +1,16 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: Playlist;
-  src: url("src/assets/fonts/Playlist\ Script.otf") format("opentype");
+  font-family: "Playlist";
+  src: url("./assets/fonts/transfonter.org-20250403-230131/Playlist-Script.woffPlaylist-Script.woff2")
+      format("woff2"),
+    url("./assets/fonts/transfonter.org-20250403-230131/Playlist-Script.woffPlaylist-Script.woff")
+      format("woff");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @theme {
   --font-playlist: Playlist;
-  --font-poppins: Poppins;
-  --font-roboto: Roboto;
 }
