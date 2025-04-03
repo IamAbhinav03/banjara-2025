@@ -20,8 +20,8 @@ export default function MusicSection() {
   return (
     <div className="mt-24 relative">
       {/* Decorative elements */}
-      <div className="absolute -top-12 left-1/4 w-24 h-24 rounded-full bg-pink-200 opacity-30 blur-xl"></div>
-      <div className="absolute top-1/2 right-1/3 w-32 h-32 rounded-full bg-purple-200 opacity-40 blur-xl"></div>
+      <div className="hidden md:block absolute -top-12 left-1/4 w-24 h-24 rounded-full bg-pink-200 opacity-30 blur-xl"></div>
+      <div className="hidden md:block absolute top-1/2 right-1/3 w-32 h-32 rounded-full bg-purple-200 opacity-40 blur-xl"></div>
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
