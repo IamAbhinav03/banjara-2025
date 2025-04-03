@@ -342,7 +342,7 @@ const Competitions = () => {
                             rel="noopener noreferrer"
                             className="w-1/2"
                           >
-                            <Button className="w-full bg-gradient-to-r from-blue-500 to-green-500 text-white hover:from-blue-600 hover:to-green-600 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl text-sm">
+                            <Button className="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-blue-600 hover:to-green-600 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl text-sm">
                               Register
                             </Button>
                           </a>
