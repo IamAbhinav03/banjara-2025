@@ -287,44 +287,126 @@ export default function Home() {
       </section>
       {/* Mystery Guest Section */}
       <section className="py-32 bg-gradient-to-br from-pink-900 via-purple-900 to-blue-900 relative overflow-hidden">
-        <div className="absolute inset-0s opacity-10 animate-pulse"></div>
+        <div className="absolute inset-0 opacity-10 animate-pulse"></div>
         <div className="container mx-auto px-6 relative">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
-            className="text-center max-w-4xl mx-auto"
+            className="text-center max-w-4xl mx-auto mb-16"
           >
-            <div className="mb-6">
-              <span className="text-pink-400 font-playscript text-xl tracking-wider">
-                Special Announcement
+            <div className="mb-6 pb-10">
+              <span className="text-pink-400 font-playscript text-xl tracking-wider pb-10">
+                Special Guests
               </span>
             </div>
-            <h2 className="font-playlist text-6xl md:text-8xl font-bold text-white mb-8">
-              Mystery Guest
+            <h2 className="font-playlist text-6xl md:text-8xl text-white">
+              Meet the Stars of Banjaara 2025
             </h2>
-            <div className="relative w-64 h-64 mx-auto mb-12">
-              <div className="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full animate-pulse opacity-20"></div>
-              <div className="absolute inset-4 bg-gradient-to-br from-pink-900 to-purple-900 rounded-full flex items-center justify-center border-4 border-pink-500">
-                <span className="text-8xl">🎭</span>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            {/* Artist 1 - Naalayak */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="flex flex-col md:flex-row bg-black/20 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl border border-pink-500/20"
+            >
+              <div className="md:w-1/2 relative">
+                <img
+                  src="/guest/naalayak.jpeg"
+                  alt="Naalayak"
+                  className="w-full h-96 md:h-full object-cover"
+                />
+                <div className="absolute top-0 right-0 bg-pink-500 text-white px-4 py-2 rounded-bl-lg font-bold">
+                  HEADLINER
+                </div>
               </div>
-            </div>
-            <div className="space-y-6">
-              <p className="font-playscript text-3xl text-pink-200">
-                A legendary artist is coming to Banjaara 2025!
-              </p>
-              <p className="text-xl text-purple-200">
-                Stay tuned for the big reveal...
-              </p>
-              <div className="mt-8">
-                <button className="px-8 py-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-full font-semibold hover:from-pink-600 hover:to-purple-600 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl">
-                  Register Now
-                </button>
+              <div className="md:w-1/2 p-8 flex flex-col justify-center">
+                <h3 className="font-playlist text-5xl text-white mb-4">
+                  Naalayak
+                </h3>
+                <div className="h-1 w-24 bg-pink-500 mb-6"></div>
+                <p className="text-white mb-6 leading-relaxed">
+                  Experience the raw energy of{" "}
+                  <span className="text-pink-400 font-bold">Naalayak</span>, the
+                  indie rock band captivating audiences with their powerful live
+                  performances and a unique blend of Hindi and Urdu lyrics.
+                </p>
+                <p className="text-white mb-8 leading-relaxed">
+                  Known for their energetic stage presence and considered a
+                  defining force in the new era of indie rock , NAALAYAK has
+                  recently released their new single "Urf Zakir". Catch their
+                  unmissable performance at Banjaara!
+                </p>
+                <div className="mt-auto">
+                  <span className="text-pink-400 font-bold">
+                    PERFORMANCE: 9:30 PM • MAIN STAGE
+                  </span>
+                </div>
               </div>
-            </div>
+            </motion.div>
+
+            {/* Artist 2 - Aria Melody (correct name from code) */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="flex flex-col md:flex-row bg-black/20 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl border border-blue-500/20"
+            >
+              <div className="md:w-1/2 relative order-1 md:order-2">
+                <img
+                  src="/guest/RAVI GUPTA.svg"
+                  alt="Aria Melody"
+                  className="w-full h-96 md:h-full object-cover"
+                />
+                <div className="absolute top-0 left-0 bg-blue-500 text-white px-4 py-2 rounded-br-lg font-bold">
+                  HEADLINER
+                </div>
+              </div>
+              <div className="md:w-1/2 p-8 flex flex-col justify-center order-2 md:order-1">
+                <h3 className="font-playlist text-5xl text-white mb-4">
+                  Ravi Gupta
+                </h3>
+                <div className="h-1 w-24 bg-blue-500 mb-6"></div>
+                <p className="text-white mb-6 leading-relaxed">
+                  Get ready for a laughter riot with{" "}
+                  <span className="text-blue-400 font-bold">Ravi Gupta</span>,
+                  the Delhi-based stand-up comedian celebrated for his sharp wit
+                  and relatable 'desi' humor.
+                </p>
+                <p className="text-white mb-8 leading-relaxed">
+                  Known for his observational comedy and the popular show "Kal
+                  Ki Chinta Nahi Karta" , Ravi Gupta's clean and witty humor has
+                  won hearts across the nation. Don't miss his hilarious set at
+                  Banjaara!
+                </p>
+                <div className="mt-auto">
+                  <span className="text-blue-400 font-bold">
+                    PERFORMANCE: 8:00 PM • HARMONY STAGE
+                  </span>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-center mt-16"
+          >
+            <a
+              href="#tickets"
+              className="inline-block bg-gradient-to-r from-pink-500 to-blue-500 text-white font-bold py-4 px-8 rounded-full text-xl hover:scale-105 transition-transform"
+            >
+              SECURE YOUR SPOT NOW
+            </a>
           </motion.div>
         </div>
       </section>
+
       {/* Throwback Gallery Section */}
       <section className="py-24 bg-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-5"></div>
