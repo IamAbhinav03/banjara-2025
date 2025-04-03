@@ -10,7 +10,7 @@ import Navbar from "@/components/Navbar/Navarbar";
 import Footer from "@/components/Footer/Footer";
 import { Button } from "@/components/ui/button";
 import { Gift, Users, IndianRupee } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 const competitionsData = [
@@ -218,21 +218,21 @@ const competitionsData = [
 ];
 
 const Competitions = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [activeCategory, setActiveCategory] = useState(
     competitionsData[0].category
   );
 
-  const handleViewDetails = (category: string, item: { name: string }) => {
-    navigate(
-      `/competitions/${category.toLowerCase().replace(/\s+/g, "-")}/${item.name
-        .toLowerCase()
-        .replace(/\s+/g, "-")}`,
-      {
-        state: { category, item },
-      }
-    );
-  };
+  // const handleViewDetails = (category: string, item: { name: string }) => {
+  //   navigate(
+  //     `/competitions/${category.toLowerCase().replace(/\s+/g, "-")}/${item.name
+  //       .toLowerCase()
+  //       .replace(/\s+/g, "-")}`,
+  //     {
+  //       state: { category, item },
+  //     }
+  //   );
+  // };
 
   return (
     <>
