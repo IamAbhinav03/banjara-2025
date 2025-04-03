@@ -55,9 +55,11 @@ export default function Home() {
               <p className="font-playscript text-2xl text-white/90 mb-8">
                 A Carnival of Magic
               </p>
-              <button className="px-8 py-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-full font-semibold hover:from-pink-600 hover:to-purple-600 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl">
-                Explore
-              </button>
+              <a href="#explore" style={{ all: "unset" }}>
+                <button className="px-8 py-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-full font-semibold hover:from-pink-600 hover:to-purple-600 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl">
+                  Explore
+                </button>
+              </a>
             </motion.div>
           </div>
         </main>
@@ -156,7 +158,10 @@ export default function Home() {
         </div>
       </section> */}
       {/* Festival Information & Countdown Section */}
-      <section className="py-24 bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50 relative overflow-hidden">
+      <section
+        className="py-24 bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50 relative overflow-hidden"
+        id="explore"
+      >
         <div className="container mx-auto px-6 relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -276,7 +281,8 @@ export default function Home() {
             {/* Call to Action Example (Add your actual link) */}
             <div className="mt-10">
               <a
-                href="#"
+                href="https://unstop.com/college-fests/banjaara-2025-ashoka-university-sonepat-haryana-346098"
+                target="_blank"
                 className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-shadow"
               >
                 Register Now
@@ -342,7 +348,7 @@ export default function Home() {
                 </p>
                 <div className="mt-auto">
                   <span className="text-pink-400 font-bold">
-                    PERFORMANCE: 9:30 PM • MAIN STAGE
+                    PERFORMANCE: 6:30 PM • Sunken Field
                   </span>
                 </div>
               </div>
@@ -384,7 +390,7 @@ export default function Home() {
                 </p>
                 <div className="mt-auto">
                   <span className="text-blue-400 font-bold">
-                    PERFORMANCE: 8:00 PM • HARMONY STAGE
+                    PERFORMANCE: 4:30 PM • Sports MPH
                   </span>
                 </div>
               </div>
@@ -398,7 +404,8 @@ export default function Home() {
             className="text-center mt-16"
           >
             <a
-              href="#tickets"
+              href="https://unstop.com/events/attendee-registration-both-days-banjaara-2025-ashoka-university-sonepat-haryana-1425485"
+              target="_blank"
               className="inline-block bg-gradient-to-r from-pink-500 to-blue-500 text-white font-bold py-4 px-8 rounded-full text-xl hover:scale-105 transition-transform"
             >
               SECURE YOUR SPOT NOW
