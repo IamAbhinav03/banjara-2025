@@ -328,22 +328,22 @@ const Competitions = () => {
                           </span>
                         </div>
                         <div className="flex gap-2 mt-4">
-                          <Button
+                          {/* <Button
                             onClick={() =>
                               handleViewDetails(activeCategory, item)
                             }
                             className="w-1/2 bg-gradient-to-r from-pink-500 to-purple-500 text-white hover:from-pink-600 hover:to-purple-600 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl text-sm"
                           >
                             Details
-                          </Button>
+                          </Button> */}
                           <a
                             href={item.details.registrationLink}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="w-1/2"
                           >
-                            <Button className="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-blue-600 hover:to-green-600 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl text-sm">
-                              Register
+                            <Button className="w-full bg-gradient-to-r from-pink-500 to-purple-500 text-white hover:from-blue-600 hover:to-green-600 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl text-sm">
+                              Register Now
                             </Button>
                           </a>
                         </div>
