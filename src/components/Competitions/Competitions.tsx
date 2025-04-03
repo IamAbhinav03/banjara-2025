@@ -25,6 +25,7 @@ const competitionsData = [
           teamSize: "15-20 + 3 (set up)",
           registrationFee: "₹ 900",
           prizePool: "₹ 20,000",
+          registrationLink: "https://unstop.com/events/natakabaazi-banjaara-2025-ashoka-university-sonepat-haryana-1419831"
         },
       },
       {
@@ -35,6 +36,7 @@ const competitionsData = [
           teamSize: "7-20",
           registrationFee: "₹ 1000",
           prizePool: "₹ 30,000",
+          registrationLink: "https://unstop.com/events/synergy-banjaara-2025-ashoka-university-sonepat-haryana-1421126"
         },
       },
       {
@@ -45,6 +47,7 @@ const competitionsData = [
           teamSize: "3-8",
           registrationFee: "₹ 1000",
           prizePool: "₹ 25,000",
+          registrationLink: "https://unstop.com/events/battle-of-bands-banjaara-2025-ashoka-university-sonepat-haryana-1421042"
         },
       },
       {
@@ -55,6 +58,7 @@ const competitionsData = [
           teamSize: "7-15",
           registrationFee: "₹ 800",
           prizePool: "₹ 12,000",
+          registrationLink: "https://unstop.com/events/concordia-banjaara-2025-ashoka-university-sonepat-haryana-1421050"
         },
       },
     ],
@@ -70,6 +74,7 @@ const competitionsData = [
           teamSize: "2+1",
           registrationFee: "₹ 400",
           prizePool: "₹ 15,000",
+          registrationLink:"https://unstop.com/events/face-card-banjaara-2025-ashoka-university-sonepat-haryana-1421052"
         },
       },
       {
@@ -80,6 +85,7 @@ const competitionsData = [
           teamSize: "1-3",
           registrationFee: "₹ 150",
           prizePool: "₹ 5,000",
+          registrationLink: "https://unstop.com/events/beyond-the-brush-banjaara-2025-ashoka-university-sonepat-haryana-1421056"
         },
       },
       {
@@ -90,6 +96,7 @@ const competitionsData = [
           teamSize: "2-6",
           registrationFee: "₹ 500",
           prizePool: "₹ 15,000",
+          registrationLink: "https://unstop.com/events/frame-by-frame-banjaara-2025-ashoka-university-sonepat-haryana-1421060"
         },
       },
       {
@@ -115,6 +122,7 @@ const competitionsData = [
           teamSize: "Individual",
           registrationFee: "₹ 100",
           prizePool: "₹ 4,000",
+          registrationLink: "https://unstop.com/events/rangreza-banjaara-2025-ashoka-university-sonepat-haryana-1421064"
         },
       },
       {
@@ -125,6 +133,7 @@ const competitionsData = [
           teamSize: "Individual",
           registrationFee: "₹ 250",
           prizePool: "₹ 7,000",
+          registrationLink: "https://unstop.com/events/turncoat-debate-banjaara-2025-ashoka-university-sonepat-haryana-1421075"
         },
       },
     ],
@@ -140,6 +149,7 @@ const competitionsData = [
           teamSize: "3-6",
           registrationFee: "₹ 200",
           prizePool: "₹ 20,000",
+          registrationLink: "https://unstop.com/competitions/the-corporate-conquest-banjaara-2025-ashoka-university-sonepat-haryana-1421081"
         },
       },
       {
@@ -149,6 +159,7 @@ const competitionsData = [
           teamSize: "3",
           registrationFee: "₹ 400",
           prizePool: "₹ 6,000",
+          registrationLink: "https://unstop.com/events/marvel-rivals-banjaara-2025-ashoka-university-sonepat-haryana-1421088"
         },
       },
       {
@@ -158,6 +169,7 @@ const competitionsData = [
           teamSize: "Up to 3",
           registrationFee: "₹ 50/person",
           prizePool: "₹ 10,000",
+          registrationLink: "https://unstop.com/quiz/quizzing-competition-banjaara-2025-ashoka-university-sonepat-haryana-1421095"
         },
       },
       {
@@ -167,6 +179,7 @@ const competitionsData = [
           teamSize: "1-3",
           registrationFee: "₹ 150/person",
           prizePool: "₹ 7,000",
+          registrationLink: "https://unstop.com/competitions/ad-mad-banjaara-2025-ashoka-university-sonepat-haryana-1421098"
         },
       },
       {
@@ -177,6 +190,7 @@ const competitionsData = [
           teamSize: "3-4",
           registrationFee: "₹ 200/team",
           prizePool: "₹ 4,000",
+          registrationLink:"https://unstop.com/competitions/geopolitical-intelligence-challenge-crafting-foreign-policy-banjaara-2025-ashoka-university-sonepat-haryana-1421103"
         },
       },
       {
@@ -186,6 +200,7 @@ const competitionsData = [
           teamSize: "Individual",
           registrationFee: "ON-THE-SPOT ₹ 50",
           prizePool: "₹ 4,000",
+          registrationLink: "https://unstop.com/workshops-webinars/food-fiesta-banjaara-2025-ashoka-university-sonepat-haryana-1421106"
         },
       },
       {
@@ -195,6 +210,7 @@ const competitionsData = [
           teamSize: "Individual",
           registrationFee: "ON-THE-SPOT ₹ 50",
           prizePool: "Exciting prizes",
+          registrationLink: "https://unstop.com/workshops-webinars/the-fitness-challenge-banjaara-2025-ashoka-university-sonepat-haryana-1421116"
         },
       },
     ],
@@ -311,14 +327,26 @@ const Competitions = () => {
                             {item.details.teamSize}
                           </span>
                         </div>
-                        <Button
-                          onClick={() =>
-                            handleViewDetails(activeCategory, item)
-                          }
-                          className="mt-4 w-full bg-gradient-to-r from-pink-500 to-purple-500 text-white hover:from-pink-600 hover:to-purple-600 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
-                        >
-                          View Details
-                        </Button>
+                        <div className="flex gap-2 mt-4">
+                          <Button
+                            onClick={() =>
+                              handleViewDetails(activeCategory, item)
+                            }
+                            className="w-1/2 bg-gradient-to-r from-pink-500 to-purple-500 text-white hover:from-pink-600 hover:to-purple-600 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl text-sm"
+                          >
+                            Details
+                          </Button>
+                          <a
+                            href={item.details.registrationLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-1/2"
+                          >
+                            <Button className="w-full bg-gradient-to-r from-blue-500 to-green-500 text-white hover:from-blue-600 hover:to-green-600 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl text-sm">
+                              Register
+                            </Button>
+                          </a>
+                        </div>
                       </CardContent>
                     </Card>
                   </motion.div>
