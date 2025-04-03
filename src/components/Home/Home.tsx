@@ -4,6 +4,7 @@ import backgroundVideo from "../../assets/background.mp4"; // Replace with your 
 import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/Navbar/Navarbar";
 import { useState } from "react";
+import MusicSection from "../Music";
 
 export default function Home() {
   // const [showTagline, setShowTagline] = useState(false);
@@ -290,6 +291,7 @@ export default function Home() {
             </div>
           </motion.div>
         </div>
+        <MusicSection></MusicSection>
       </section>
       {/* Mystery Guest Section */}
       <section className="py-32 bg-gradient-to-br from-pink-900 via-purple-900 to-blue-900 relative overflow-hidden">
