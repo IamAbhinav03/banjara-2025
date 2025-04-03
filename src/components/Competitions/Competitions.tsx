@@ -336,16 +336,16 @@ const Competitions = () => {
                           >
                             Details
                           </Button> */}
-                          <a
+                            <a
                             href={item.details.registrationLink}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="w-1/2"
-                          >
+                            className="w-full"
+                            >
                             <Button className="w-full bg-gradient-to-r from-pink-500 to-purple-500 text-white hover:from-blue-600 hover:to-green-600 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl text-sm">
                               Register Now
                             </Button>
-                          </a>
+                            </a>
                         </div>
                       </CardContent>
                     </Card>
