@@ -27,12 +27,12 @@ export default function MusicSection() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-center mb-10"
+        className="text-center mb-6 md:mb-10"
       >
-        <h2 className="font-playlist text-4xl md:text-5xl bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent mb-4">
+        <h2 className="font-playlist text-4xl md:text-4xl lg:text-5xl bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent mb-4">
           The Sound of Banjaara
         </h2>
-        <p className="font-sans text-lg text-gray-700 max-w-2xl mx-auto">
+        <p className="font-sans text-base md:text-lg text-gray-700 max-w-2xl mx-auto px-2">
           Experience the rhythm of our festival with the official Banjaara 2025
           anthem. Let the music transport you to the vibrant celebration ahead!
         </p>
@@ -42,12 +42,12 @@ export default function MusicSection() {
         initial={{ scale: 0.9, opacity: 0 }}
         whileInView={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.6 }}
-        className="bg-white rounded-2xl p-6 max-w-lg mx-auto shadow-xl hover:shadow-2xl transition-all duration-300"
+        className="bg-white rounded-2xl md:p-6 max-w-lg mx-auto shadow-xl hover:shadow-2xl transition-all duration-300"
       >
-        <div className="flex items-center gap-6">
+        <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
           <button
             onClick={togglePlay}
-            className="w-16 h-16 flex-shrink-0 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center shadow-lg transform hover:scale-105 transition-transform"
+            className="w-14 h-14 md:w-16 md:h-16 flex-shrink-0 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center shadow-lg transform hover:scale-105 transition-transform"
           >
             {isPlaying ? (
               <Pause size={28} className="text-white" />
@@ -56,11 +56,11 @@ export default function MusicSection() {
             )}
           </button>
 
-          <div className="flex-grow">
-            <h3 className="text-xl font-bold text-gray-800">
+          <div className="flex-grow w-full sm:w-auto text-center sm:text-left">
+            <h3 className="text-lg md:text-xl font-bold text-gray-800">
               Banjaara Anthem 2025
             </h3>
-            <p className="text-gray-600 text-sm mb-2">
+            <p className="text-gray-600 text-xs md:text-sm mb-2">
               Official Festival Soundtrack
             </p>
 
